@@ -22,4 +22,8 @@ public class Class {
         this.students.add(student);
     }
 
+    public String showData() {
+        return "\nName: " + name + "\nAssigned classroom: " + assignedClassroom;
+    }
+
 }
