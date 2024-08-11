@@ -4,18 +4,20 @@ import Data.Interfaces.Teacher;
 
 public class PartTimeTeacher extends Person implements Teacher {
 
-    private PartTimeTeacher(String name, int id, double baseSalary) {
-        super(name, id, baseSalary);
-    }
+    private int hoursWeek;
 
-    protected String showData() {
-        return "";
+    private PartTimeTeacher(String name, int id, double baseSalary, int hoursWeek) {
+        super(name, id, baseSalary);
+        this.hoursWeek = hoursWeek;
     }
 
     public double calculateSalary() {
-
-        return 2;
+        return baseSalary * hoursWeek;
     }
 
+    @Override
+    public String showData() {
+        return "ID: " + id + "\nName: " + name + "\nHours active this week: " + hoursWeek + "\nTotal salary: " + calculateSalary();
+    }
 
 }
