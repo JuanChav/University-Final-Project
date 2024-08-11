@@ -25,25 +25,25 @@ public class Main {
             System.out.println("6. Exit");
 
             System.out.print("Input an option: ");
-            int option = scanner.nextInt();
+            String option = scanner.next();
 
             switch (option) {
-                case 1:
+                case "1":
                     System.out.println("");
                     break;
-                case 2:
+                case "2":
                     System.out.println("");
                     break;
-                case 3:
+                case "3":
                     System.out.println("");
                     break;
-                case 4:
+                case "4":
                     System.out.println("");
                     break;
-                case 5:
+                case "5":
                     System.out.println("");
                     break;
-                case 6:
+                case "6":
                     System.out.println("Exiting...");
                     ver = false;
                     break;
