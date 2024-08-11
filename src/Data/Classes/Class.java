@@ -22,7 +22,8 @@ public class Class {
         this.students.add(student);
     }
 
-    public String showData() {
+    @Override
+    public String toString() {
         return "\nName: " + name + "\nAssigned classroom: " + assignedClassroom;
     }
 
