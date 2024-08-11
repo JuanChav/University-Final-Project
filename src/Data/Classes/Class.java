@@ -9,13 +9,21 @@ public class Class {
 
     private String name, assignedClassroom;
     private List<Student> students;
-    private Teacher teacher;
+    private FullTimeTeacher fullTeacher;
+    private PartTimeTeacher partTeacher;
 
-    public Class(String name, String assignedClassroom, Teacher teacher) {
+    public Class(String name, String assignedClassroom) {
         this.name = name;
         this.assignedClassroom = assignedClassroom;
-        this.teacher = teacher;
         this.students = new ArrayList<>();
+    }
+
+    public void setFullTeacher(FullTimeTeacher fullTeacher) {
+        this.fullTeacher = fullTeacher;
+    }
+
+    public void setPartTeacher(PartTimeTeacher partTeacher) {
+        this.partTeacher = partTeacher;
     }
 
     private void addStudent(Student student) {
