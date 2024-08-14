@@ -48,7 +48,7 @@ public class Main {
                     Student student = new Student(name, age);
                     System.out.println("Input the subject: \n1. Math\n2. Science\n3. English\n4. History");
                     int subj = scanner.nextInt();
-                    university.getSubject(subj - 1).showData(subj);
+                    university.getSubject(subj - 1).addStudent(student);
                     break;
                 case "4":
                     System.out.println("");

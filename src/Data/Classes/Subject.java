@@ -24,7 +24,7 @@ public class Subject {
         this.partTeacher = partTeacher;
     }
 
-    protected void addStudent(Student student) {
+    public void addStudent(Student student) {
         this.students.add(student);
     }
 
@@ -39,9 +39,9 @@ public class Subject {
             studentList.append(student.showData()).append("\n");
         }
         if (conf == 1 || conf == 2) {
-            return "Teacher: " + fullTeacher.showData() + "\nList of students:\n" + studentList;
+            return "Teacher: \n" + fullTeacher.showData() + "\nList of students:\n" + studentList;
         }
-        return "Teacher: " + partTeacher.showData() + "\nList of students:\n" + studentList;
+        return "Teacher: \n" + partTeacher.showData() + "\nList of students:\n" + studentList;
     }
 
 }
