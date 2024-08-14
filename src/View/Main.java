@@ -31,13 +31,16 @@ public class Main {
 
             switch (option) {
                 case "1":
-                    System.out.println("");
+                    university.showAllProfessors();
                     break;
                 case "2":
-                    System.out.println("");
+//                    university.showAllSubjects();
+
                     break;
                 case "3":
-                    System.out.println("");
+                    System.out.println("Input the student's name: ");
+                    String name = scanner.next();
+                    System.out.println();
                     break;
                 case "4":
                     System.out.println("");
