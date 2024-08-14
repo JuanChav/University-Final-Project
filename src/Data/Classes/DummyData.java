@@ -11,7 +11,7 @@ public class DummyData {
         Student student6 = new Student("Doretta MacCafferky", 6, 19);
 
         PartTimeTeacher partTimeTeacher1 = new PartTimeTeacher("Nicola Menzies", 1, 25);
-        PartTimeTeacher partTimeTeacher2 = new PartTimeTeacher("Stefania Banger", 2, 32);
+        PartTimeTeacher partTimeTeacher2 = new PartTimeTeacher("Stefania Banger", 2, 28);
 
         FullTimeTeacher fullTimeTeacher1 = new FullTimeTeacher("Neda Hyam", 1, 8);
         FullTimeTeacher fullTimeTeacher2 = new FullTimeTeacher("Krishna Meddows", 2, 12);

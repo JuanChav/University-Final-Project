@@ -30,7 +30,15 @@ public class Subject {
 
     @Override
     public String toString() {
-        return "\nName: " + name + "\nAssigned classroom: " + assignedClassroom;
+        return "Name: " + name + "\nAssigned classroom: " + assignedClassroom;
+    }
+
+    public String showData() {
+        String studentList = "";
+        for (Student student: students) {
+            studentList = student + "\n";
+        }
+        return "Teacher: " + fullTeacher + "\nList of students";
     }
 
 }

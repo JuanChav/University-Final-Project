@@ -34,4 +34,24 @@ public class University {
     protected void addSubjects(Subject subject) {
         this.subjects.add(subject);
     }
+
+    public void showAllProfessors() {
+        System.out.println("Full-time Teachers:");
+        for (FullTimeTeacher teacher : this.fullTeachers) {
+            System.out.println(teacher.showData());
+        }
+        System.out.println("Part-time Teachers:");
+        for (PartTimeTeacher teacher : this.partTeachers) {
+            System.out.println(teacher.showData());
+        }
+    }
+
+    public void showAllSubjects() {
+        System.out.println("Classes");
+        for (Subject subject : this.subjects) {
+            System.out.println(subject);
+        }
+    }
+
+
 }
