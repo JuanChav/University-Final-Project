@@ -5,9 +5,10 @@ import Data.Interfaces.Teacher;
 public class PartTimeTeacher extends Person implements Teacher {
 
     private int hoursWeek;
+    private static double baseSalary = 30000;
 
-    private PartTimeTeacher(String name, int id, double baseSalary, int hoursWeek) {
-        super(name, id, baseSalary);
+    public PartTimeTeacher(String name, int id, int hoursWeek) {
+        super(name, id);
         this.hoursWeek = hoursWeek;
     }
 

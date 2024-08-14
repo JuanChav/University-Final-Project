@@ -1,5 +1,6 @@
 package View;
 
+import Data.Classes.DummyData;
 import Data.Classes.University;
 
 import java.util.Scanner;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         University university = new University("Uninorte");
+        DummyData.initializeData(university);
         showMainMenu(university);
     }
 
@@ -52,6 +54,10 @@ public class Main {
             }
 
         } while (ver);
+    }
+
+    private static void initializeUniversity() {
+
     }
 
 }
