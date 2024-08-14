@@ -24,7 +24,7 @@ public class Subject {
         this.partTeacher = partTeacher;
     }
 
-    protected void addStudent(Student student) {
+    public void addStudent(Student student) {
         this.students.add(student);
     }
 
@@ -33,12 +33,15 @@ public class Subject {
         return "Name: " + name + "\nAssigned classroom: " + assignedClassroom;
     }
 
-    public String showData() {
-        String studentList = "";
+    public String showData(int conf) {
+        StringBuilder studentList = new StringBuilder();
         for (Student student: students) {
-            studentList = student + "\n";
+            studentList.append(student.showData()).append("\n");
         }
-        return "Teacher: " + fullTeacher + "\nList of students";
+        if (conf == 1 || conf == 2) {
+            return "Teacher: \n" + fullTeacher.showData() + "\nList of students:\n" + studentList;
+        }
+        return "Teacher: \n" + partTeacher.showData() + "\nList of students:\n" + studentList;
     }
 
 }

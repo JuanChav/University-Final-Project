@@ -19,6 +19,14 @@ public class University {
         this.subjects = new ArrayList<>();
     }
 
+    public Subject getSubject(int index) {
+        return subjects.get(index);
+    }
+
+    public Student getStudent(int index) {
+        return students.get(index);
+    }
+
     protected void addFullTimeTeachers(FullTimeTeacher fullTimeTeacher) {
         this.fullTeachers.add(fullTimeTeacher);
     }
@@ -35,7 +43,7 @@ public class University {
         this.subjects.add(subject);
     }
 
-    public void showAllProfessors() {
+    public void showAllTeachers() {
         System.out.println("Full-time Teachers:");
         for (FullTimeTeacher teacher : this.fullTeachers) {
             System.out.println(teacher.showData());
@@ -46,8 +54,15 @@ public class University {
         }
     }
 
+    public void showAllStudents() {
+        System.out.println("Students");
+        for (Student student: students) {
+            System.out.println(student.showData());
+        }
+    }
+
     public void showAllSubjects() {
-        System.out.println("Classes");
+        System.out.println("Subjects");
         for (Subject subject : this.subjects) {
             System.out.println(subject);
         }

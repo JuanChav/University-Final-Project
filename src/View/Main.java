@@ -1,6 +1,8 @@
 package View;
 
 import Data.Classes.DummyData;
+import Data.Classes.Student;
+import Data.Classes.Subject;
 import Data.Classes.University;
 
 import java.util.Scanner;
@@ -31,19 +33,42 @@ public class Main {
 
             switch (option) {
                 case "1":
-                    university.showAllProfessors();
+                    university.showAllTeachers();
                     break;
                 case "2":
-//                    university.showAllSubjects();
-
+                    university.showAllSubjects();
+                    System.out.println("Input the subject you wanna see more info: \n1. Math\n2. Science\n3. English\n4. History");
+                    int sub = scanner.nextInt();
+                    System.out.println(university.getSubject(sub - 1).showData(sub));
                     break;
                 case "3":
                     System.out.println("Input the student's name: ");
                     String name = scanner.next();
-                    System.out.println();
+                    System.out.println("Input the student's age: ");
+                    int age = scanner.nextInt();
+                    Student student = new Student(name, age);
+                    System.out.println("Input the subject: \n1. Math\n2. Science\n3. English\n4. History");
+                    int subj = scanner.nextInt();
+                    university.getSubject(subj - 1).addStudent(student);
                     break;
                 case "4":
-                    System.out.println("");
+                    System.out.println("Input the subject's name");
+                    String subjectName = scanner.next();
+                    System.out.println("Input the subject classroom: ");
+                    String subjectCR = scanner.next();
+                    Subject subject = new Subject(subjectName, subjectCR);
+                    university.showAllTeachers();
+                    System.out.println("What teacher is going to teach this subject (Input the ID)");
+                    int subjectTeacher = scanner.nextInt();
+                    int verf;
+                    do {
+                        university.showAllStudents();
+                        System.out.println("Input the ID of the student");
+                        int id_ = scanner.nextInt();
+                        subject.addStudent(university.getStudent(id_ - 1));
+                        System.out.println("Do you want to add a new student in the subject?\n1. Yes\n2. No");
+                        verf = scanner.nextInt();
+                    } while (verf == 1);
                     break;
                 case "5":
                     System.out.println("");
@@ -57,10 +82,6 @@ public class Main {
             }
 
         } while (ver);
-    }
-
-    private static void initializeUniversity() {
-
     }
 
 }

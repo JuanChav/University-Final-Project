@@ -2,10 +2,13 @@ package Data.Classes;
 
 public class Student extends Person {
 
-    private int age;
+    private int age, id;
+    private static int cont = 0;
 
-    public Student(String name, int id, int age) {
-        super(name, id);
+    public Student(String name, int age) {
+        super(name);
+        this.cont++;
+        this.id = this.cont;
         this.age = age;
     }
 

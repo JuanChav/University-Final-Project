@@ -3,18 +3,18 @@ package Data.Classes;
 public class DummyData {
 
     public static void initializeData(University university) {
-        Student student1 = new Student("Angelia Chavey", 1, 26);
-        Student student2 = new Student("Leena Blackmoor", 2, 22);
-        Student student3 = new Student("Ellwood Berryann", 3, 21);
-        Student student4 = new Student("Heindrick Windrum", 4, 18);
-        Student student5 = new Student("Florida Gecksy", 5, 22);
-        Student student6 = new Student("Doretta MacCafferky", 6, 19);
+        Student student1 = new Student("Angelia Chavey", 26);
+        Student student2 = new Student("Leena Blackmoor",  22);
+        Student student3 = new Student("Ellwood Berryann", 21);
+        Student student4 = new Student("Heindrick Windrum", 18);
+        Student student5 = new Student("Florida Gecksy", 22);
+        Student student6 = new Student("Doretta MacCafferky", 19);
 
-        PartTimeTeacher partTimeTeacher1 = new PartTimeTeacher("Nicola Menzies", 1, 25);
-        PartTimeTeacher partTimeTeacher2 = new PartTimeTeacher("Stefania Banger", 2, 28);
+        PartTimeTeacher partTimeTeacher1 = new PartTimeTeacher("Nicola Menzies", 25);
+        PartTimeTeacher partTimeTeacher2 = new PartTimeTeacher("Stefania Banger", 28);
 
-        FullTimeTeacher fullTimeTeacher1 = new FullTimeTeacher("Neda Hyam", 1, 8);
-        FullTimeTeacher fullTimeTeacher2 = new FullTimeTeacher("Krishna Meddows", 2, 12);
+        FullTimeTeacher fullTimeTeacher1 = new FullTimeTeacher("Neda Hyam", 8);
+        FullTimeTeacher fullTimeTeacher2 = new FullTimeTeacher("Krishna Meddows", 12);
 
         Subject math = new Subject("Math", "A1");
         math.setFullTeacher(fullTimeTeacher2);
