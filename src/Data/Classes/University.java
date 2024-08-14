@@ -19,6 +19,10 @@ public class University {
         this.subjects = new ArrayList<>();
     }
 
+    public Subject getSubject(int index) {
+        return subjects.get(index);
+    }
+
     protected void addFullTimeTeachers(FullTimeTeacher fullTimeTeacher) {
         this.fullTeachers.add(fullTimeTeacher);
     }

@@ -1,6 +1,7 @@
 package View;
 
 import Data.Classes.DummyData;
+import Data.Classes.Student;
 import Data.Classes.University;
 
 import java.util.Scanner;
@@ -34,13 +35,20 @@ public class Main {
                     university.showAllProfessors();
                     break;
                 case "2":
-//                    university.showAllSubjects();
-
+                    university.showAllSubjects();
+                    System.out.println("Input the subject you wanna see more info: \n1. Math\n2. Science\n3. English\n4. History");
+                    int sub = scanner.nextInt();
+                    System.out.println(university.getSubject(sub - 1).showData(sub));
                     break;
                 case "3":
                     System.out.println("Input the student's name: ");
                     String name = scanner.next();
-                    System.out.println();
+                    System.out.println("Input the student's age: ");
+                    int age = scanner.nextInt();
+                    Student student = new Student(name, age);
+                    System.out.println("Input the subject: \n1. Math\n2. Science\n3. English\n4. History");
+                    int subj = scanner.nextInt();
+                    university.getSubject(subj - 1).showData(subj);
                     break;
                 case "4":
                     System.out.println("");

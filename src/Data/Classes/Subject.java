@@ -33,12 +33,15 @@ public class Subject {
         return "Name: " + name + "\nAssigned classroom: " + assignedClassroom;
     }
 
-    public String showData() {
-        String studentList = "";
+    public String showData(int conf) {
+        StringBuilder studentList = new StringBuilder();
         for (Student student: students) {
-            studentList = student + "\n";
+            studentList.append(student.showData()).append("\n");
         }
-        return "Teacher: " + fullTeacher + "\nList of students";
+        if (conf == 1 || conf == 2) {
+            return "Teacher: " + fullTeacher.showData() + "\nList of students:\n" + studentList;
+        }
+        return "Teacher: " + partTeacher.showData() + "\nList of students:\n" + studentList;
     }
 
 }
