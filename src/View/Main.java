@@ -2,6 +2,7 @@ package View;
 
 import Data.Classes.DummyData;
 import Data.Classes.Student;
+import Data.Classes.Subject;
 import Data.Classes.University;
 
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class Main {
 
             switch (option) {
                 case "1":
-                    university.showAllProfessors();
+                    university.showAllTeachers();
                     break;
                 case "2":
                     university.showAllSubjects();
@@ -51,7 +52,23 @@ public class Main {
                     university.getSubject(subj - 1).addStudent(student);
                     break;
                 case "4":
-                    System.out.println("");
+                    System.out.println("Input the subject's name");
+                    String subjectName = scanner.next();
+                    System.out.println("Input the subject classroom: ");
+                    String subjectCR = scanner.next();
+                    Subject subject = new Subject(subjectName, subjectCR);
+                    university.showAllTeachers();
+                    System.out.println("What teacher is going to teach this subject (Input the ID)");
+                    int subjectTeacher = scanner.nextInt();
+                    int verf;
+                    do {
+                        university.showAllStudents();
+                        System.out.println("Input the ID of the student");
+                        int id_ = scanner.nextInt();
+                        subject.addStudent(university.getStudent(id_ - 1));
+                        System.out.println("Do you want to add a new student in the subject?\n1. Yes\n2. No");
+                        verf = scanner.nextInt();
+                    } while (verf == 1);
                     break;
                 case "5":
                     System.out.println("");
@@ -65,10 +82,6 @@ public class Main {
             }
 
         } while (ver);
-    }
-
-    private static void initializeUniversity() {
-
     }
 
 }
