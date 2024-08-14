@@ -71,7 +71,10 @@ public class Main {
                     } while (verf == 1);
                     break;
                 case "5":
-                    System.out.println("");
+                    university.showAllStudents();
+                    System.out.println("Input the ID of the student yoy wanna search: ");
+                    int id_ = scanner.nextInt();
+                    university.verifyIfStudentInSubject(id_);
                     break;
                 case "6":
                     System.out.println("Exiting...");
