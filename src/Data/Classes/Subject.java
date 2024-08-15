@@ -42,18 +42,19 @@ public class Subject {
         for (Student student: students) {
             studentList.append(student.showData()).append("\n");
         }
-        if (conf == 1 || conf == 2) {
+        if (partTeacher == null) {
             return "Teacher: \n" + fullTeacher.showData() + "\nList of students:\n" + studentList;
         }
         return "Teacher: \n" + partTeacher.showData() + "\nList of students:\n" + studentList;
     }
 
-    protected void showStudentSubjects(int idStudent) {
+    protected String showStudentSubjects(int idStudent) {
         for (Student student: students) {
             if (student.getId() == idStudent) {
-                System.out.println("The student is list in: " + this.name);
+                return "The student is list in: " + this.name;
             }
         }
+        return "";
     }
 
     public boolean verifyIfStudentIsInSubject(int idStudent) {

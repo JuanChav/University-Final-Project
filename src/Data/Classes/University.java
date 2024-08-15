@@ -2,6 +2,7 @@ package Data.Classes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class University {
 
@@ -51,55 +52,67 @@ public class University {
         this.subjects.add(subject);
     }
 
-    public void showAllTeachers() {
-        System.out.println("Full-time Teachers:");
+    public String showAllTeachers() {
+        StringBuilder teacherList = new StringBuilder();
+        teacherList.append("\nFull-time Teachers:").append("\n");
         for (FullTimeTeacher teacher : this.fullTeachers) {
-            System.out.println(teacher.showData());
+            teacherList.append(teacher.showData()).append("\n");
         }
-        System.out.println("Part-time Teachers:");
+        teacherList.append("\nPart-time Teachers:").append("\n");
         for (PartTimeTeacher teacher : this.partTeachers) {
-            System.out.println(teacher.showData());
+            teacherList.append(teacher.showData()).append("\n");
         }
+        return "List of teachers: \n" + teacherList;
     }
 
-    public void showFullTimeTeachers() {
-        System.out.println("Full-time Teachers:");
+    public String[] showFullTimeTeachers() {
+        StringBuilder teacherList = new StringBuilder();
         for (FullTimeTeacher teacher : this.fullTeachers) {
-            System.out.println(teacher.showData());
+            teacherList.append(teacher.getName()).append("-");
         }
+        return teacherList.toString().split("-");
     }
 
-    public void showPartTimeTeachers() {
-        System.out.println("Part-time Teachers:");
+    public String[] showPartTimeTeachers() {
+        StringBuilder teacherList = new StringBuilder();
         for (PartTimeTeacher teacher : this.partTeachers) {
-            System.out.println(teacher.showData());
+            teacherList.append(teacher.getName()).append("-");
         }
+        return teacherList.toString().split("-");
     }
 
-    public void showAllStudents() {
-        System.out.println("Students");
+    public String[] showAllStudents() {
+        StringBuilder studentList = new StringBuilder();
         for (Student student: students) {
-            System.out.println(student.showData());
+            studentList.append(student.getName()).append("-");
         }
+        return studentList.toString().split("-");
     }
 
-    public void showAllSubjects() {
-        System.out.println("Subjects");
+    public String showAllSubjects() {
+        StringBuilder subjectList = new StringBuilder();
         for (Subject subject : this.subjects) {
-            System.out.println(subject);
+            subjectList.append(subject).append("\n");
         }
+        return "Subjects: \n" + subjectList;
     }
 
-    public void showAllSubjectsNames() {
+    public String[] showAllSubjectsNames() {
+        StringBuilder subjectNameList = new StringBuilder();
         for (Subject subject : this.subjects) {
-            System.out.println(subject.getName());
+            subjectNameList.append(subject.getName()).append("-");
         }
+        return subjectNameList.toString().split("-");
     }
 
-    public void showHowManySubjectsAStudentHas(int idStudent) {
+    public String showHowManySubjectsAStudentHas(int idStudent) {
+        StringBuilder subjectList = new StringBuilder();
         for (Subject subject : this.subjects) {
-            subject.showStudentSubjects(idStudent);
+            if (!Objects.equals(subject.showStudentSubjects(idStudent), "")) {
+                subjectList.append(subject.showStudentSubjects(idStudent)).append("\n");
+            }
         }
+        return "Subjects: \n" + subjectList;
     }
 
 }
