@@ -37,7 +37,8 @@ public class Main {
                     break;
                 case "2":
                     university.showAllSubjects();
-                    System.out.println("Input the subject you wanna see more info: \n1. Math\n2. Science\n3. English\n4. History");
+                    System.out.println("Input the subject you wanna see more info: ");
+                    university.showAllSubjectsNames();
                     int sub = scanner.nextInt();
                     System.out.println(university.getSubject(sub - 1).showData(sub));
                     break;
@@ -47,9 +48,10 @@ public class Main {
                     System.out.println("Input the student's age: ");
                     int age = scanner.nextInt();
                     Student student = new Student(name, age);
-                    System.out.println("Input the subject: \n1. Math\n2. Science\n3. English\n4. History");
-                    int subj = scanner.nextInt();
-                    university.getSubject(subj - 1).addStudent(student);
+                    System.out.println("Input the subject:");
+                    university.showAllSubjectsNames();
+                    sub = scanner.nextInt();
+                    university.getSubject(sub - 1).addStudent(student);
                     break;
                 case "4":
                     System.out.println("Input the subject's name");
@@ -65,6 +67,16 @@ public class Main {
                         university.showAllStudents();
                         System.out.println("Input the ID of the student");
                         int id_ = scanner.nextInt();
+                        int verf2 = 0;
+                        while (verf2 == 0) {
+                             if (subject.verifyIfStudentIsInSubject(id_)) {
+                                 System.out.println("The student is alredy list in the subject");
+                                 System.out.println("Input the ID of the student");
+                                 id_ = scanner.nextInt();
+                             } else {
+                                 verf2 = 1;
+                             }
+                        }
                         subject.addStudent(university.getStudent(id_ - 1));
                         System.out.println("Do you want to add a new student in the subject?\n1. Yes\n2. No");
                         verf = scanner.nextInt();
@@ -74,7 +86,7 @@ public class Main {
                     university.showAllStudents();
                     System.out.println("Input the ID of the student yoy wanna search: ");
                     int id_ = scanner.nextInt();
-                    university.verifyIfStudentInSubject(id_);
+                    university.showHowManySubjectsAStudentHas(id_);
                     break;
                 case "6":
                     System.out.println("Exiting...");

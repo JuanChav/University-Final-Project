@@ -68,11 +68,16 @@ public class University {
         }
     }
 
-    public void verifyIfStudentInSubject(int idStudent) {
+    public void showAllSubjectsNames() {
         for (Subject subject : this.subjects) {
-            subject.verifyStudent(idStudent);
+            System.out.println(subject.getName());
         }
     }
 
+    public void showHowManySubjectsAStudentHas(int idStudent) {
+        for (Subject subject : this.subjects) {
+            subject.showStudentSubjects(idStudent);
+        }
+    }
 
 }
