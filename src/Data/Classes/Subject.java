@@ -20,11 +20,11 @@ public class Subject {
         return name;
     }
 
-    protected void setFullTeacher(FullTimeTeacher fullTeacher) {
+    public void setFullTeacher(FullTimeTeacher fullTeacher) {
         this.fullTeacher = fullTeacher;
     }
 
-    protected void setPartTeacher(PartTimeTeacher partTeacher) {
+    public void setPartTeacher(PartTimeTeacher partTeacher) {
         this.partTeacher = partTeacher;
     }
 
