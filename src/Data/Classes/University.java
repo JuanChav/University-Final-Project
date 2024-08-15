@@ -68,5 +68,11 @@ public class University {
         }
     }
 
+    public void verifyIfStudentInSubject(int idStudent) {
+        for (Subject subject : this.subjects) {
+            subject.verifyStudent(idStudent);
+        }
+    }
+
 
 }

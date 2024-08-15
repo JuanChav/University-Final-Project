@@ -7,9 +7,13 @@ public class Student extends Person {
 
     public Student(String name, int age) {
         super(name);
-        this.cont++;
-        this.id = this.cont;
+        cont++;
+        this.id = cont;
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
