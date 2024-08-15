@@ -48,6 +48,7 @@ public class Main {
                     System.out.println("Input the student's age: ");
                     int age = scanner.nextInt();
                     Student student = new Student(name, age);
+                    university.addStudent(student);
                     System.out.println("Input the subject:");
                     university.showAllSubjectsNames();
                     sub = scanner.nextInt();
@@ -59,9 +60,20 @@ public class Main {
                     System.out.println("Input the subject classroom: ");
                     String subjectCR = scanner.next();
                     Subject subject = new Subject(subjectName, subjectCR);
-                    university.showAllTeachers();
-                    System.out.println("What teacher is going to teach this subject (Input the ID)");
-                    int subjectTeacher = scanner.nextInt();
+                    university.addSubjects(subject);
+                    System.out.println("The teacher is gonna be a full o part time?\n1. Full time\n2. Part time");
+                    int teacherModality = scanner.nextInt();
+                    if (teacherModality == 1) {
+                        university.showFullTimeTeachers();
+                        System.out.println("What teacher is going to teach this subject (Input the ID)");
+                        int idTeacher = scanner.nextInt();
+                        subject.setFullTeacher(university.getFullTeachers(idTeacher - 1));
+                    } else {
+                        university.showPartTimeTeachers();
+                        System.out.println("What teacher is going to teach this subject (Input the ID)");
+                        int idTeacher = scanner.nextInt();
+                        subject.setPartTeacher(university.getPartTeachers(idTeacher - 1));
+                    }
                     int verf;
                     do {
                         university.showAllStudents();

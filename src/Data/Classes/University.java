@@ -27,6 +27,14 @@ public class University {
         return students.get(index);
     }
 
+    public FullTimeTeacher getFullTeachers(int index) {
+        return fullTeachers.get(index);
+    }
+
+    public PartTimeTeacher getPartTeachers(int index) {
+        return partTeachers.get(index);
+    }
+
     protected void addFullTimeTeachers(FullTimeTeacher fullTimeTeacher) {
         this.fullTeachers.add(fullTimeTeacher);
     }
@@ -35,11 +43,11 @@ public class University {
         this.partTeachers.add(partTimeTeacher);
     }
 
-    protected void addStudent(Student student) {
+    public void addStudent(Student student) {
         this.students.add(student);
     }
 
-    protected void addSubjects(Subject subject) {
+    public void addSubjects(Subject subject) {
         this.subjects.add(subject);
     }
 
@@ -48,6 +56,20 @@ public class University {
         for (FullTimeTeacher teacher : this.fullTeachers) {
             System.out.println(teacher.showData());
         }
+        System.out.println("Part-time Teachers:");
+        for (PartTimeTeacher teacher : this.partTeachers) {
+            System.out.println(teacher.showData());
+        }
+    }
+
+    public void showFullTimeTeachers() {
+        System.out.println("Full-time Teachers:");
+        for (FullTimeTeacher teacher : this.fullTeachers) {
+            System.out.println(teacher.showData());
+        }
+    }
+
+    public void showPartTimeTeachers() {
         System.out.println("Part-time Teachers:");
         for (PartTimeTeacher teacher : this.partTeachers) {
             System.out.println(teacher.showData());
