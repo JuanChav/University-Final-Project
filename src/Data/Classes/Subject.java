@@ -16,6 +16,10 @@ public class Subject {
         this.students = new ArrayList<>();
     }
 
+    public String getName() {
+        return name;
+    }
+
     protected void setFullTeacher(FullTimeTeacher fullTeacher) {
         this.fullTeacher = fullTeacher;
     }
@@ -44,12 +48,21 @@ public class Subject {
         return "Teacher: \n" + partTeacher.showData() + "\nList of students:\n" + studentList;
     }
 
-    protected void verifyStudent(int idStudent) {
+    protected void showStudentSubjects(int idStudent) {
         for (Student student: students) {
             if (student.getId() == idStudent) {
                 System.out.println("The student is list in: " + this.name);
             }
         }
+    }
+
+    public boolean verifyIfStudentIsInSubject(int idStudent) {
+        for (Student student: students) {
+            if (student.getId() == idStudent) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
